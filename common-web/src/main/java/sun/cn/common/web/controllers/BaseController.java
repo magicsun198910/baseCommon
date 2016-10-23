@@ -83,7 +83,7 @@ public class BaseController{
 	 */
 	public int getIntParameter(String key,int defaultValue){
 		Object obj = getRequest().getParameter(key);
-		return obj==null?defaultValue:Integer.valueOf(getRequest().getParameter(key));
+		return obj==null?defaultValue:Integer.valueOf(String.valueOf(obj));
 	}
 	
 	/**

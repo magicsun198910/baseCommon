@@ -30,14 +30,7 @@ public class ReqRespContext {
 	}
 
 	public static HttpServletRequest getReq() {
-		try {
-			HttpServletRequest request = requestLocal.get();
-			return request;
-		} catch (Exception e) {
-			return null;
-		} finally {
-			requestLocal.remove();
-		}
+		return requestLocal.get();
 	}
 
 	public static void setResp(HttpServletResponse value) {
@@ -45,13 +38,6 @@ public class ReqRespContext {
 	}
 
 	public static HttpServletResponse getResp() {
-		try {
-			HttpServletResponse response = responseLocal.get();
-			return response;
-		} catch (Exception e) {
-			return null;
-		} finally {
-			responseLocal.remove();
-		}
+		return responseLocal.get();
 	}
 }
